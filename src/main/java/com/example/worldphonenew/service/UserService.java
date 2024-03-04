@@ -2,6 +2,7 @@ package com.example.worldphonenew.service;
 
 import com.example.worldphonenew.dto.LoginDto;
 import com.example.worldphonenew.entity.RoleEntity;
+import com.example.worldphonenew.entity.UsersEntity;
 import org.springframework.http.ResponseEntity;
 
 /**
@@ -14,5 +15,8 @@ import org.springframework.http.ResponseEntity;
 public interface UserService {
 
     String login(LoginDto loginDto);
+
+    UsersEntity addOrUpdateUser (UsersEntity usersEntity);
+
 
 }

@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +51,18 @@ public class UserServiceImpl implements UserService {
         user.getRoles().forEach(r-> rolesNames.add(r.getName()));
         String token = jwtUtilities.generateToken(user.getUsername(),rolesNames);
         return token;
+    }
+
+    @Override
+    @Transactional
+    public UsersEntity addOrUpdateUser(UsersEntity usersEntity) {
+        if (usersEntity != null) {
+            if (usersEntity.getId() != null) {
+
+            } else {
+
+            }
+        }
+        return null;
     }
 }
